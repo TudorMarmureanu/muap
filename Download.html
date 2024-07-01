@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiapp-Comercial Help</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #666666; /* fundal gri placut */
+        }
+
+        h1 {
+            text-align: center;
+            color: #ccff66; /* titluri culoare #ccff66 */
+            font-weight: bold;
+        }
+        
+        h3 {
+            text-align: center;
+            color: #ccff66; /* titluri culoare #ccff66 */
+        }
+        
+        h2 {
+            text-align: center;
+            color: #ccff66; /* titluri culoare #ccff66 */
+        }
+
+        .content {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            margin: 10px;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+            box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+        }
+
+        p {
+            text-align: left;
+            transition: all 0.3s ease;
+            color: #fff; /* text alb */
+        }
+
+        .bold-black {
+            color: black;
+            font-weight: bold;
+        }
+
+        .bold-red {
+            color: red;
+            font-weight: bold;
+        }
+
+        .bold-green {
+            color: #66ff66;
+            font-weight: bold;
+        }
+
+        .fog {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(to bottom, rgba(204, 204, 204, 0), rgba(204, 204, 204, 1));
+            pointer-events: none;
+        }
+
+        .pricing-table {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .pricing-card {
+            background-color: #333333;
+            color: #ffffff;
+            border: 1px solid #ccff66;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.05);
+            box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+        }
+
+        .pricing-card h3 {
+            margin-top: 0;
+            color: #ccff66;
+        }
+
+        .pricing-card .price {
+            font-size: 24px;
+            color: #66ff66;
+            margin: 10px 0;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .pricing-card ul li {
+            margin: 10px 0;
+        }
+
+        .pricing-card button {
+            background-color: #66ff66;
+            color: #333333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .pricing-card button:hover {
+            background-color: #ccff66;
+        }
+
+        /* Style pentru cartonaș */
+        .card-modal {
+            display: none; /* Ascuns inițial */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #ccff66;
+            border-radius: 10px;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-modal h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .card-modal ul {
+            list-style: none;
+            padding: 0;
+            color: #333;
+        }
+
+        .card-modal ul li {
+            margin: 10px 0;
+        }
+
+        .card-modal button {
+            background-color: #66ff66;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .card-modal button:hover {
+            background-color: #ccff66;
+        }
+
+        /* Overlay pentru cartonaș */
+        .overlay {
+            display: none; /* Ascuns inițial */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .button-with-icon {
+            display: flex;
+            align-items: center;
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .button-with-icon img {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multiapp-Comercial Download Registration</h1>
+    <div class="content">
+        <p>Pentru a putea descărca această aplicație este necesar să solicitați o cheie de licență pe adresa <b class="bold-green">multiapp.comercial@gmail.com</b> printr-un mail cu <b class="bold-black">subiectul <i>"multiapp"</b></i> și <b class="bold-black">textul <i>"product key?"</i></b>,<b class="bold-black"> motivul (dacă este o organizație sau pentru uz personal)</b> și un <b class="bold-black">răspuns dacă se dorește o configurare specială pentru meniul de copiere (path-urile programelor, reguli/profile conform fișei de dotări etc.)</b>. <br><br>Se va trimite un răspuns la acel mail cu următorul text: un cont IBAN pe care trebuie să se livreze suma de bani cerută și, desigur, valoarea în lei care trebuie trimisă pe IBAN-ul respectiv. <br><br>Și nu în ultimul rând, trebuie precizat si <b class="bold-black">pachetul de achiziție</b> (valabil mai jos). <br><br>Dacă pașii de mai sus au fost parcurși cu succes, se va trimite cheia de licență corespunzătoare pachetului de descărcare sau un nou link dacă cel afișat pe site nu mai este disponibil. Fără cheia de licență, aplicația nu poate fi utilizată corespunzător.</p>
+        <br>
+        <br>
+        <br>
+        <h2><u><b>Prices</b></u></h2>
+        <div class="pricing-table">
+            <div class="pricing-card">
+                <h3>Standard</h3>
+                <p class="price">50.00 RON</p>
+                <ul>
+                    <li>Funcționalitate de bază</li>
+                    <li>Suport prin email</li>
+                    <li>Actualizări regulate</li>
+                </ul>
+                <button onclick="showCard('Standard', '50.00 RON', ['Cont IT (aplicație de copiere, modul explorer, text editor, whiteboard, find & replace text, create/extract zip, pdf to word, backup utility, rename utility)', 'Task manager', 'Password generator', 'Criptarea fisierelor', 'Zip password cracker', 'Repair Setup'])">Vizualizează</button>
+            </div>
+            <div class="pricing-card">
+                <h3>Premium</h3>
+                <p class="price">70.00 RON</p>
+                <ul>
+                    <li>Funcționalitate avansată</li>
+                    <li>Suport prin telefon și email</li>
+                    <li>Actualizări prioritare</li>
+                </ul>
+                <button onclick="showCard('Premium', '70.00 RON', ['Cont IT (aplicație de copiere, modul explorer, text editor, whiteboard, find & replace text, deschidere fișă dotări, create/extract zip, pdf to word, backup utility, rename utility, network console, get IP & MAC, ping tool, port scanner, AI chatbot, PDF tools, System info, real time system info, screen events, comparator)', 'Task manager', 'Password manager + generatoare', 'Criptarea fisierelor', 'Zip password cracker', 'Terminal Emulator', 'Band monitoring', 'Repair Setup'])">Vizualizează</button>
+            </div>
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <p class="price">150.00 RON</p>
+                <ul>
+                    <li>Funcționalitate completă</li>
+                    <li>Suport prin telefon și email</li>
+                    <li>Actualizări prioritare</li>
+                </ul>
+                <button onclick="showCard('Enterprise', '150.00 RON', ['Toate funcționalitățile mentionate in meniul help sunt disponibile.', 'Prețul este pentru fiecare utilizator ce folosește acest software în cadrul departamentului și se oferă o singură cheie de licență de tip enterprise (exemplu: 10 utilizatori folosesc aceeași cheie de produs).', 'Acces beta la noi funcționalități.', 'Repair Setup'])">Vizualizează</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <p><i>Este recomandat ca pentru utilizarea aplicației zoom-ul ecranului să fie de 100%, în special pentru laptop-uri. În cazul în care rezoluția ecranului nu este 100%, puteți face următorii pași: click dreapta pe aplicația Multiapp.exe -> Proprietăți -> Change settings for all users -> Change high DPI settings -> și se bifează acele opțiuni din ultima imagine. (capturi de ecran mai jos cu procedura descrisă). Programul va fi destinat calculatoarelor cu o arhitectură de 64 biți.</i></p>
+        <div class="image-container">
+            <img src="help/image44.png" alt="Resolution">
+        </div>
+        <div class="image-container">
+            <img src="help/image45.png" alt="Resolution">
+        </div>
+        <div class="image-container">
+            <img src="help/image46.png" alt="Resolution">
+        </div>
+        <br>
+        <p><i><b class="bold-red">!</b><b class="bold-black"><i>Este foarte important să se citească termenii și condițiile la rularea installer-ului</b><b class="bold-red">!</b></i></p>
+    </div>
+    <br>
+    <br>
+    <div style="text-align: center; margin-top: 20px;">
+        <h2><u><b>Download Kits</b></u></h2>
+        <button class="button-with-icon" onclick="window.location.href='https://wetransfer.com/downloads/0644987f6065b8e28b9ad707b81df13220240630175152/da4790';"  style="display: block; margin: 10px auto; padding: 10px 20px; font-size: 16px; background-color: #ccff66; border: none; border-radius: 5px; cursor: pointer;"><img src="help/technology.png" alt="Icon" width="20" height="20">Standard Setup x64</button>
+        <button class="button-with-icon" onclick="window.location.href='https://wetransfer.com/downloads/7c4b94c713cf66a773ce615fd6fc568120240630174949/ce0226';"  style="display: block; margin: 10px auto; padding: 10px 20px; font-size: 16px; background-color: #ccff66; border: none; border-radius: 5px; cursor: pointer;"><img src="help/technology.png" alt="Icon" width="20" height="20">Premium Setup x64</button>
+        <button class="button-with-icon" onclick="window.location.href='https://wetransfer.com/downloads/97ca3c5117f5ea47f33945fde973e17020240630174743/23f677';"  style="display: block; margin: 10px auto; padding: 10px 20px; font-size: 16px; background-color: #ccff66; border: none; border-radius: 5px; cursor: pointer;"><img src="help/technology.png" alt="Icon" width="20" height="20">Enterprise Setup x64</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div style="text-align: center; margin-top: 20px;">
+        <h2><u><b>Additional Kits</b></u></h2>
+        <!-- <button onclick="window.location.href='https://wetransfer.com/downloads/66cd06646863f58975d693b5131f389e20240630174626/bdfaa4';"  style="display: block; margin: 10px auto; padding: 10px 20px; font-size: 16px; background-color: #ccff66; border: none; border-radius: 5px; cursor: pointer;">Launcher</button> -->
+        <button class="button-with-icon" onclick="window.location.href='https://wetransfer.com/downloads/66cd06646863f58975d693b5131f389e20240630174626/bdfaa4';"  style="display: block; margin: 10px auto; padding: 10px 20px; font-size: 16px; background-color: #ccff66; border: none; border-radius: 5px; cursor: pointer;">
+            <img src="help/Launcher.png" alt="Icon" width="20" height="20">
+            Launcher x64
+        </button>
+        <!-- <button onclick="window.location.href='https://wetransfer.com/downloads/72a320d39e1cfb6daff8a1a411d5401320240630174508/844fbe';"  style="display: block; margin: 10px auto; padding: 10px 20px; font-size: 16px; background-color: #ccff66; border: none; border-radius: 5px; cursor: pointer;">Repair Setup</button> -->
+        <button class="button-with-icon" onclick="window.location.href='https://wetransfer.com/downloads/72a320d39e1cfb6daff8a1a411d5401320240630174508/844fbe';"   style="display: block; margin: 10px auto; padding: 10px 20px; font-size: 16px; background-color: #ccff66; border: none; border-radius: 5px; cursor: pointer;">
+            <img src="help/FetcherICO2.png" alt="Icon" width="20" height="20">
+            Repair Setup x64
+        </button>
+    </div>
+       
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="window.location.href='help.html'" style="padding: 10px 20px; font-size: 16px; background-color: #ccff66; border: none; border-radius: 5px; cursor: pointer;">
+            ← To Help Page
+        </button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <p><i>*Acest site este realizat pentru prezentarea informațiilor cu privire la proiectul de disertație pentru facultatea de informatică din cadrul Universității "Vasile Alecsandri" din Bacău ce va fi susținut în anul 2025, iar informațiile prezentate mai sus nu vor fi folosite pentru comercializarea soft-ului. Cu alte cuvinte, acest site face o simulare pentru comercializarea soft-ului conform proiectului meu.*</i></p>
+    <br>
+    <div class="fog"></div> <!-- Div-ul pentru efectul de ceață -->
+
+    <!-- Div-ul pentru cartonaș -->
+    <div class="overlay" id="overlay"></div>
+    <div class="card-modal" id="cardModal">
+        <h3 id="cardTitle"></h3>
+        <p class="price" id="cardPrice"></p>
+        <ul id="cardFeatures"></ul>
+        <button onclick="closeCard()">Închide</button>
+    </div>
+
+    <script>
+        function showCard(title, price, features) {
+            document.getElementById('cardTitle').textContent = title;
+            document.getElementById('cardPrice').textContent = price;
+            
+            const featuresList = document.getElementById('cardFeatures');
+            featuresList.innerHTML = '';
+            features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('cardModal').style.display = 'block';
+        }
+
+        function closeCard() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('cardModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
