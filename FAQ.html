@@ -23,43 +23,37 @@
         }
         
         header {
-            background: linear-gradient(90deg, #1c1c1c, #333);
-            color: #f0f0f0;
+            background-color: #222;
+            color: #00FFFF;
             padding: 30px 0;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 30px #cb5bff;
             transition: background-color 0.5s ease;
         }
-        
         header:hover {
-            background: linear-gradient(90deg, #262626, #444);
+            background-color: #1a1a1a;
         }
-        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
         .intro {
             text-align: center;
             margin: 60px 0;
             animation: fadeIn 1s ease-out;
         }
-        
         .intro h1 {
             font-size: 3em;
             margin-bottom: 15px;
-            color: #ffcc00;
+            color: #ccff66;
             text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.8);
             transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
         }
-        
         .intro h1:hover {
             transform: scale(1.1);
-            color: #ffdd44;
+            color: #00FFFF;
         }
-        
         .intro p {
             font-size: 1.3em;
             margin-bottom: 20px;
@@ -71,7 +65,6 @@
             opacity: 0;
             animation: fadeIn 1.5s ease-out 0.5s forwards;
         }
-        
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -81,7 +74,6 @@
             text-align: center;
             margin: 60px 0;
         }
-        
         .feature {
             display: inline-block;
             width: 300px;
@@ -89,37 +81,31 @@
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 30px #00FFFF, 0 0 20px #FF00FF;
             transition: transform 0.5s ease, background-color 0.3s ease;
         }
-        
         .feature:hover {
             transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.2);
         }
-        
         .feature img {
             max-width: 100px;
             height: auto;
             margin-bottom: 15px;
             transition: transform 0.4s ease;
         }
-        
         .feature img:hover {
             transform: rotate(360deg) scale(1.1);
         }
-        
         .feature h3 {
             font-size: 1.7em;
             margin-bottom: 10px;
-            color: #00ccff;
+            color: #FF00FF;
             transition: color 0.3s ease;
         }
-        
         .feature h3:hover {
             color: #00ffff;
         }
-        
         .feature p {
             font-size: 1.1em;
             line-height: 1.6;
@@ -133,24 +119,22 @@
             padding: 40px;
             margin: 60px 0;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 30px #00FFFF;
             transition: background-color 0.5s ease, transform 0.3s ease;
         }
-        
         .cta:hover {
             background-color: #333;
             transform: scale(1.02);
         }
-        
         .cta h2 {
             font-size: 2.2em;
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 3px;
         }
-        
         .cta a {
             background-color: #ccff66;
+            box-shadow: 0 0 30px #ccff66;
             color: #333;
             padding: 15px 35px;
             text-decoration: none;
@@ -160,9 +144,11 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
             cursor: pointer;
         }
-        
         .cta a:hover {
-            background-color: #61f5b0;
+            background-color: #FF00FF;
+            box-shadow: 0 0 30px #FF00FF, 0 0 20px #00FFFF;
+            text-decoration: none;
+            color: inherit; /* Setează culoarea textului conform stilului implicit */
             transform: scale(1.05);
         }
         
@@ -170,6 +156,7 @@
         .contact-link {
             display: inline-block;
             background-color: #ccff66;
+            box-shadow: 0 0 30px #ccff66;
             color: #121212;
             padding: 10px 25px;
             text-decoration: none;
@@ -181,15 +168,17 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
             cursor: pointer;
         }
-        
         .contact-link:hover {
-            background-color: #61f5b0;
+            background-color: #FF00FF;
+            box-shadow: 0 0 30px #FF00FF, 0 0 20px #00FFFF;
+            text-decoration: none;
+            color: inherit; /* Setează culoarea textului conform stilului implicit */
             transform: scale(1.05);
         }
-        
         .bug-link {
             display: inline-block;
             background-color: #ccff66;
+            box-shadow: 0 0 30px #ccff66;
             color: #121212;
             padding: 10px 25px;
             text-decoration: none;
@@ -202,9 +191,9 @@
             float: right;
             cursor: pointer;
         }
-        
         .bug-link:hover {
-            background-color: #ccff66;
+            background-color: #FF00FF;
+            box-shadow: 0 0 30px #FF00FF, 0 0 20px #00FFFF;
             transform: scale(1.05);
         }
         
@@ -215,6 +204,7 @@
         
         .faq {
             background-color: transparent;
+            box-shadow: 0 0 30px #00FFFF, 0 0 20px #FF00FF;
             border: 1px solid #9fa4a8;
             border-radius: 10px;
             margin: 20px 0;
@@ -225,9 +215,9 @@
         }
         
         .faq.active {
-            background-color: #fff;
-            color: #000;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+            background-color: #000;
+            color: #ccff66;
+            box-shadow: 0 0 30px #cb5bff;
         }
         
         .faq.active::before,
@@ -324,11 +314,16 @@
     <header>
         <div class="container">
             <h1>Welcome to FAQ Section</h1>
-            <p>In the following section, I will outline various requests concerning the services provided. Additionally, written solutions are provided as responses in the applicant's email.</p>
+            <p style="font-size: 20px">In the following section, I will outline various requests concerning the services provided. Additionally, written solutions are provided as responses in the applicant's email.</p>
         </div>
     </header>
     <main>
+        <br>
+        <br>
+        <br>
         <h1 class="pop-up">Frequently Asked Questions</h1>
+        <br>
+        <br>
         <div class="faq-container pop-up">
           <div class="faq pop-up">
             <h3 class="faq-title pop-up">
@@ -521,11 +516,16 @@
           </div>
 
         </div>
+        <br>
+        <br>
+        <br>
 
         <a class="contact-link pop-up" onclick="window.open('contact.html', '_blank')">Contact</a>
         <a class="contact-link pop-up" onclick="window.open('suport.html', '_blank')">Report a Bug</a>
         <a class="contact-link pop-up" onclick="window.open('home.html', '_blank')">Home</a>
     </main>
+    <br>
+    <br>
     <footer class="footer">
         <p>&copy; 2024 Multiapp. All rights reserved. | Designed for IT Professionals</p>
     </footer>

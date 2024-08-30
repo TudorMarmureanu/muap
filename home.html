@@ -15,15 +15,15 @@
             overflow-x: hidden;
         }
         header {
-            background: linear-gradient(90deg, #1c1c1c, #333);
-            color: #f0f0f0;
+            background-color: #222;
+            color: #00FFFF;
             padding: 30px 0;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 30px #cb5bff;
             transition: background-color 0.5s ease;
         }
         header:hover {
-            background: linear-gradient(90deg, #262626, #444);
+            background-color: #1a1a1a;
         }
         .container {
             max-width: 1200px;
@@ -38,13 +38,13 @@
         .intro h1 {
             font-size: 3em;
             margin-bottom: 15px;
-            color: #ffcc00;
+            color: #ccff66;
             text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.8);
             transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
         }
         .intro h1:hover {
             transform: scale(1.1);
-            color: #ffdd44;
+            color: #00FFFF;
         }
         .intro p {
             font-size: 1.3em;
@@ -72,7 +72,7 @@
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 30px #00FFFF, 0 0 20px #FF00FF;
             transition: transform 0.5s ease, background-color 0.3s ease;
         }
         .feature:hover {
@@ -91,7 +91,7 @@
         .feature h3 {
             font-size: 1.7em;
             margin-bottom: 10px;
-            color: #00ccff;
+            color: #FF00FF;
             transition: color 0.3s ease;
         }
         .feature h3:hover {
@@ -109,11 +109,12 @@
             padding: 40px;
             margin: 60px 0;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 30px #00FFFF;
             transition: background-color 0.5s ease, transform 0.3s ease;
         }
         .cta:hover {
             background-color: #333;
+            color: #61f5b0;
             transform: scale(1.02);
         }
         .cta h2 {
@@ -124,6 +125,7 @@
         }
         .cta a {
             background-color: #ccff66;
+            box-shadow: 0 0 30px #ccff66;
             color: #333;
             padding: 15px 35px;
             text-decoration: none;
@@ -134,13 +136,17 @@
             cursor: pointer;
         }
         .cta a:hover {
-            background-color: #61f5b0;
+            background-color: #FF00FF;
+            box-shadow: 0 0 30px #FF00FF, 0 0 20px #00FFFF;
+            text-decoration: none;
+            color: inherit; /* Setează culoarea textului conform stilului implicit */
             transform: scale(1.05);
         }
         /* Stilizarea specifică pentru link-ul de contact */
         .contact-link {
             display: inline-block;
             background-color: #ccff66;
+            box-shadow: 0 0 30px #ccff66;
             color: #121212;
             padding: 10px 25px;
             text-decoration: none;
@@ -153,12 +159,16 @@
             cursor: pointer;
         }
         .contact-link:hover {
-            background-color: #61f5b0;
+            background-color: #FF00FF;
+            box-shadow: 0 0 30px #FF00FF, 0 0 20px #00FFFF;
+            text-decoration: none;
+            color: inherit; /* Setează culoarea textului conform stilului implicit */
             transform: scale(1.05);
         }
         .bug-link {
             display: inline-block;
             background-color: #ccff66;
+            box-shadow: 0 0 30px #ccff66;
             color: #121212;
             padding: 10px 25px;
             text-decoration: none;
@@ -173,6 +183,7 @@
         }
         .bug-link:hover {
             background-color: #61f5b0;
+            box-shadow: 0 0 30px #FF00FF, 0 0 20px #00FFFF;
             transform: scale(1.05);
         }
         .footer {
@@ -204,7 +215,7 @@
 <header>
     <div class="container">
         <h1>Welcome to Multiapp</h1>
-        <p>The ideal software for the IT department</p>
+        <p style="font-size: 20px">The ideal software for the IT department</p>
     </div>
 </header>
 
@@ -213,6 +224,15 @@
         <h1>Multiapp - The top IT solution</h1>
         <p>With Multiapp, your IT department can manage tasks more quickly and efficiently. The integrated automation transforms daily challenges into simple solutions.</p>
     </section>
+    <br>
+    <br>
+
+    <section class="intro pop-up">
+        <h1 style="font-size: 18px; color: #61f5b0;"><i>The development of the first stable versions of this project began on May 20, 2024.</i></h1>
+        <p style="font-size: 18px;"><i>The story began when I wanted to help my IT team with automating some tasks.</i></p>
+    </section>
+    <br>
+    <br>
 
     <section class="features pop-up">
         <div class="feature pop-up">
@@ -221,17 +241,32 @@
             <p>Automate repetitive tasks and focus on innovation. Multiapp offers powerful tools for efficient management of IT tasks.</p>
         </div>
     </section>
-
+    <br>
+    <br>
     <section class="cta pop-up">
         <h2>Get started now!</h2>
-        <p>Discover the power of Multiapp and revolutionize your IT department.</p>
+        <p style="font-size: 20px">Discover the power of Multiapp and revolutionize your IT department.</p>
         <br>
         <a href="download.html">Download</a>
         <br>
         <br>
         <br>
         <a href="help.html">Help Page</a>
+        <br>
+        <br>
     </section>
+    <br>
+    <br>
+    <section class="cta pop-up">
+        <h2>Other Services</h2>
+        <p style="font-size: 20px">Discover the services that could come to your help at a given moment!</p>
+        <br>
+        <a  onclick="window.open('other-services.html', '_blank')">View</a>
+        <br>
+        <br>
+    </section>
+    <br>
+    <br>
     <a class="contact-link pop-up" onclick="window.open('contact.html', '_blank')">Contact</a>
     <a class="contact-link pop-up" onclick="window.open('FAQ.html', '_blank')">FAQ</a>
     <a class="bug-link pop-up" onclick="window.open('suport.html', '_blank')">Report a Bug</a>
