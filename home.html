@@ -208,6 +208,26 @@
             opacity: 1;
             transform: translateY(0);
         }
+        #logo_img {
+            max-width: 100px;
+            margin-bottom: 20px;
+            display: block; /* Asigură-te că imaginea se afișează corect */
+            margin: 0 auto; /* Centrează imaginea */
+        }
+        download-button {
+            background-color: #61f5b0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .download-button:hover {
+            background-color: #61f5b0;
+        }
     </style>
 </head>
 <body>
@@ -223,6 +243,8 @@
     <section class="intro pop-up">
         <h1>Multiapp - The top IT solution</h1>
         <p>With Multiapp, your IT department can manage tasks more quickly and efficiently. The integrated automation transforms daily challenges into simple solutions.</p>
+        
+        <a href="help/muap_logo.jpg" download="muap_logo.jpg" class="download-button">Download Logo</a>
     </section>
     <br>
     <br>
@@ -245,6 +267,7 @@
     <br>
     <section class="cta pop-up">
         <h2>Get started now!</h2>
+        <h1 style="font-size: 18px; color: hsl(69, 88%, 67%); font-size: 30px;">78 satisfied customers so far!</h1><br>
         <p style="font-size: 20px">Discover the power of Multiapp and revolutionize your IT department.</p>
         <br>
         <a href="download.html">Download</a>
@@ -267,6 +290,12 @@
     </section>
     <br>
     <br>
+    <div class="container pop-up">
+        <section class="intro pop-up"></section>
+            <h1>Info Section!</h1>
+            <p style="font-size: larger;">Versions older than <b>0.8.4</b> will no longer receive technical support starting from <b>October 1, 2024</b>. Please download the latest version from the website.</p>
+        </section>
+    </div><br><br><br>
     <a class="contact-link pop-up" onclick="window.open('contact.html', '_blank')">Contact</a>
     <a class="contact-link pop-up" onclick="window.open('FAQ.html', '_blank')">FAQ</a>
     <a class="bug-link pop-up" onclick="window.open('suport.html', '_blank')">Report a Bug</a>
